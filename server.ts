@@ -9,7 +9,7 @@ connectToDatabase()
         // send all calls to /games to our gamesRouter
         console.log(`attempting connection at http://localhost:${port}`);
 
-        app.use("/", contentRouter);
+        app.use("/content/", contentRouter);
 
         // start the Express server
         app.listen(port, () => {
