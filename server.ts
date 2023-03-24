@@ -1,6 +1,7 @@
 const express = require( "express");
 const {connectToDatabase}  =require("./services/database.service");
 const contentRouter =require("./routes/content.router");
+const contactRouter = require("./routes/contact.router")
 const app = express();
 const port = 8080; // default port to listen
 
@@ -10,6 +11,7 @@ connectToDatabase()
         console.log(`attempting connection at http://localhost:${port}`);
 
         app.use("/content/", contentRouter);
+        app.use("/contact/", contactRouter)
 
         // start the Express server
         app.listen(port, () => {
